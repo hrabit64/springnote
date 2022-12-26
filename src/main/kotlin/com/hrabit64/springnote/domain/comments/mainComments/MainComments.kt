@@ -8,13 +8,18 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
 
-
-@Document(value = "Comments")
+//TODO Comments 공통 속성 상속으로 리펙토링 해보기
+@Document(value = "comments")
 data class MainComments(
 
     @Id
     @Field("_id")
     var id:Long? = null,
+
+    @NotEmpty
+    @Size(max = 4)
+    @Field("nick_name")
+    var nickName:String = "None",
 
     @NotEmpty
     @Size(min = 1, max = 2000000)
@@ -39,3 +44,6 @@ data class MainComments(
 
     }
 }
+
+
+

@@ -38,3 +38,6 @@ out/
 
 ###Spring Boot###
 application.properties
+application-local.properties
+application-product.properties
+application-test.properties

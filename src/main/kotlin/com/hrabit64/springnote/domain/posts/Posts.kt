@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
 
 
-@Document(value = "Posts")
+@Document(value = "posts")
 data class Posts(
     @Id
     @Field("_id")

@@ -7,12 +7,18 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
 
-
-@Document(value = "SubComments")
+//TODO Comments 공통 속성 상속으로 리펙토링 해보기
+@Document(value = "sub_comments")
 data class SubComments(
+
     @Id
     @Field("_id")
     var id:Long? = null,
+
+    @NotEmpty
+    @Size(max = 4)
+    @Field("nick_name")
+    var nickName:String = "None",
 
     @NotEmpty
     @Size(min = 1, max = 2000000)
