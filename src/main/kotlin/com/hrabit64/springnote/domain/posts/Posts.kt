@@ -24,7 +24,7 @@ data class Posts(
     var tags: Set<String> = mutableSetOf(),
 
 
-    @Size(max = 100)
+    @Size(max = 50)
     @Field("series")
     var series:String? = null,
 

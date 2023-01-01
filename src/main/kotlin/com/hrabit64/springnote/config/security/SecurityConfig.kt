@@ -16,9 +16,7 @@ class SecurityConfig(@Autowired val customOAuth2UserService:CustomOAuth2UserServ
     @Bean
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
 
-        http.csrf().disable()
-            .headers().frameOptions().disable()
-            .and()
+        http
             .authorizeHttpRequests()
                 .requestMatchers("/","/css/**","/images/**","/js/**","/error","/registration","/posts/**","/categories/**").permitAll()
                 .requestMatchers("/api/v1/**","/post/**").hasRole("OWNER")
